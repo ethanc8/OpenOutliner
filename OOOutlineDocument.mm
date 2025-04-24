@@ -27,6 +27,7 @@
 
 #import "OpenOutliner.h"
 #import <mutex>
+#include <functional>
 
 namespace {
 /**

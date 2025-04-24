@@ -27,6 +27,7 @@
 
 #import "OpenOutliner.h"
 #include <vector>
+#include <functional>
 
 /**
  * Helper class that handles events from cells in the outline view.

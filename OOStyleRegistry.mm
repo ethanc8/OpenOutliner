@@ -36,6 +36,8 @@ using std::optional;
 #import <experimental/optional>
 using std::experimental::optional;
 #endif
+#import <memory>
+#import <stdexcept>
 
 @interface OOPartialStyle ()
 {

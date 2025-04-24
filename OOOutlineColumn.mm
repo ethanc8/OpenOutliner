@@ -26,6 +26,7 @@
  */
 
 #import "OpenOutliner.h"
+#include <functional>
 
 namespace
 {

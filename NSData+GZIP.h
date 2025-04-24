@@ -32,7 +32,7 @@
 
 
 #import <Foundation/Foundation.h>
-
+#import "ExtraDefines.h"
 
 @interface NSData (GZIP)
 

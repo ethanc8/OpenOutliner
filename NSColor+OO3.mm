@@ -114,9 +114,10 @@
 			addAlpha();
 			return xml;
 		default:
-			c = [self colorUsingColorSpace: [NSColorSpace sRGBColorSpace]];
+		// FIXME-GNUstep: Implement -[NSColorSpace sRGBColorSpace]
+			c = [self colorUsingColorSpace: [NSColorSpace genericRGBColorSpace]];
 		case NSColorSpaceModelRGB:
-			if (cs == [NSColorSpace sRGBColorSpace])
+			if (cs == [NSColorSpace genericRGBColorSpace])
 			{
 				[xml addAttribute: @"srgb"
 				         withName: @"space"];

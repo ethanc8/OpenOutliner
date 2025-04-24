@@ -49,6 +49,7 @@
 #import "OOStyleRegistry.h"
 #import "OpenOutliner.h"
 #import "objcxx_helpers.h"
+#import "ExtraDefines.h"
 
 #ifndef _
 #define _(x, ...) [NSString localizedStringWithFormat: x, ## __VA_ARGS__]
