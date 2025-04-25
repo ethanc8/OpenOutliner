@@ -12,10 +12,10 @@ OpenOutliner_OBJCC_FILES = NSAttributedString+OO3.mm NSColor+OO3.mm NSString+Mis
 OpenOutliner_OBJCFLAGS += -fobjc-arc
 OpenOutliner_OBJCCFLAGS += -fobjc-arc
 OpenOutliner_CCFLAGS += -DOO_HAS_PASTEBOARD=0
-OpenOutliner_LIBRARIES_DEPEND_UPON += -lz 
+OpenOutliner_GUI_LIBS += -lz 
 
 # libbsd
-OpenOutliner_LIBRARIES_DEPEND_UPON += $(shell pkg-config --libs libbsd-overlay)
+OpenOutliner_GUI_LIBS += $(shell pkg-config --libs libbsd-overlay)
 OpenOutliner_INCLUDE_DIRS += $(shell pkg-config --cflags-only-I libbsd-overlay)
 OpenOutliner_OBJCFLAGS += $(shell pkg-config --cflags-only-other libbsd-overlay)
 OpenOutliner_OBJCCFLAGS += $(shell pkg-config --cflags-only-other libbsd-overlay)
