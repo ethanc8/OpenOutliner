@@ -1,0 +1,27 @@
+name: gnustep
+channels: # package repositories
+  - https://repo.prefix.dev/gnustep-forge # My GNUstep packages
+  - conda-forge # Community distribution of conda packages
+  - nodefaults # Disable the `defaults` channel if for some reason it's enabled
+dependencies:
+  # glibc 2.34
+  - sysroot_linux-64=2.34
+  # GNUstep dependencies
+  - gnustep-make
+  - gnustep-libdispatch
+  - gnustep-libobjc2
+  - libgnustep-base
+  - libgnustep-gui
+  - libgnustep-back
+  - imagemagick # This is here because I need to fix the dependency list
+  - clang=18
+  - clangxx=18
+  # Applications
+  - gnustep-systempreferences
+  # More dev tools
+  - bear
+  - abseil-cpp
+  - pkg-config
+  # Libraries required by my apps
+  - zlib
+  - libbsd

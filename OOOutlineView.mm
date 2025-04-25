@@ -90,6 +90,7 @@
 }
 - (void)copy: (id)sender
 {
+	#if OO_HAS_PASTEBOARD
 	auto *pb = [NSPasteboard generalPasteboard];
 	auto *selection = [self selectedRowIndexes];
 	auto *selectedObjects = [NSMutableArray new];
@@ -101,6 +102,7 @@
 	}
 	[pb clearContents];
 	[pb writeObjects: selectedObjects];
+	#endif
 }
 - (void)paste: (id)sender
 {

@@ -15,3 +15,5 @@ enum {
 };
 
 typedef enum _NSUnderlineStyle NSUnderlineStyle;
+
+typedef NSString * NSKeyValueChangeKey;

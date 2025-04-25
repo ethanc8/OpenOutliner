@@ -321,6 +321,7 @@ objectValueForTableColumn: (NSTableColumn*)tableColumn
                item: (OOOutlineRow*)item
          childIndex: (NSInteger)index
 {
+	#if OO_HAS_PASTEBOARD
 	auto *doc = document;
 	auto *v = view;
 	if (item == nil)
@@ -370,6 +371,9 @@ objectValueForTableColumn: (NSTableColumn*)tableColumn
 	}
 	[v reloadItem: nil reloadChildren: YES];
 	return YES;
+	#else
+	return NO;
+	#endif
 }
 - (NSDragOperation)outlineView: (NSOutlineView*)outlineView
                   validateDrop: (id<NSDraggingInfo>)info
@@ -387,8 +391,12 @@ objectValueForTableColumn: (NSTableColumn*)tableColumn
          writeItems: (NSArray*)items
        toPasteboard: (NSPasteboard*)pasteboard
 {
+	#if OO_HAS_PASTEBOARD
 	[pasteboard writeObjects: items];
 	return YES;
+	#else
+	return NO;
+	#endif
 }
 - (id<NSPasteboardWriting>)outlineView: (NSOutlineView*)outlineView
                pasteboardWriterForItem: item
@@ -614,6 +622,7 @@ objectValueForTableColumn: (NSTableColumn*)tableColumn
 
 - (void)pasteFromPasteboard: (NSPasteboard*)aPasteboard
 {
+	#if OO_HAS_PASTEBOARD
 	@try
 	{
 		currentDocument = document;
@@ -641,6 +650,7 @@ objectValueForTableColumn: (NSTableColumn*)tableColumn
 	{
 		currentDocument = nil;
 	}
+	#endif
 }
 - (BOOL)canCopy
 {

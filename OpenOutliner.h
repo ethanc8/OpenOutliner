@@ -51,6 +51,10 @@
 #import "objcxx_helpers.h"
 #import "ExtraDefines.h"
 
+#if !__has_feature(objc_arc)
+#error "Please compile with ARC (clang -fobjc-arc)
+#endif
+
 #ifndef _
 #define _(x, ...) [NSString localizedStringWithFormat: x, ## __VA_ARGS__]
 #endif
@@ -96,8 +100,8 @@ extern NSString *OOOUtlineXMLPasteboardType;
  * turned into zeroing weak references for debug builds, to help debugging.
  */
 #ifdef NDEBUG
-#define DEBUG_WEAK __unsafe_unreatained
-#define DEBUG_WEAK_PROPERTY unsafe_unreatained
+#define DEBUG_WEAK __unsafe_unretained
+#define DEBUG_WEAK_PROPERTY unsafe_unretained
 #else
 #define DEBUG_WEAK __weak
 #define DEBUG_WEAK_PROPERTY weak
