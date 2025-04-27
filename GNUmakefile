@@ -20,9 +20,14 @@ OpenOutliner_INCLUDE_DIRS += $(shell pkg-config --cflags-only-I libbsd-overlay)
 OpenOutliner_OBJCFLAGS += $(shell pkg-config --cflags-only-other libbsd-overlay)
 OpenOutliner_OBJCCFLAGS += $(shell pkg-config --cflags-only-other libbsd-overlay)
 
-OpenOutliner_HAS_RESOURCE_BUNDLE = yes
-OpenOutliner_RESOURCE_FILES = Main.storyboard OutlineDocumentWindow.xib ColumnInspector.xib
-OpenOutliner_RESOURCE_FILES_DIR = Resources
+OpenOutliner_RESOURCE_FILES = Icon/DocIcon.icns \
+	Icon/OpenOutliner.icns \
+	Assets.xcassets \
+	Base.lproj/OutlineDocumentWindow.xib \
+	Base.lproj/Main.storyboard \
+	ColumnInspector.xib \
+	OpenOutlinerInfo.plist
+
 OpenOutliner_MAIN_STORYBOARD_FILE = Main.storyboard
 
 include $(GNUSTEP_MAKEFILES)/application.make
