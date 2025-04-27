@@ -5,6 +5,7 @@
 typedef uint8_t UInt8;
 typedef uint32_t UInt32;
 
+#ifdef GNUSTEP
 enum {
   NSColorSpaceModelUnknown = NSUnknownColorSpaceModel,
   NSColorSpaceModelGray = NSGrayColorSpaceModel,
@@ -17,3 +18,4 @@ enum {
 typedef enum _NSUnderlineStyle NSUnderlineStyle;
 
 typedef NSString * NSKeyValueChangeKey;
+#endif
