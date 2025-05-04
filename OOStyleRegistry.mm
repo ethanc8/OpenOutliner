@@ -29,7 +29,7 @@
 #import <functional>
 #import <utility>
 #import <vector>
-#if __has_include(<optional>)
+#if __has_include(<optional>) && !defined(GNUSTEP)
 #import <optional>
 using std::optional;
 #else

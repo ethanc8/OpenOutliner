@@ -47,9 +47,17 @@ thread_local OOOutlineDocument __unsafe_unretained *currentDocument;
 {
 	if ([[pasteboard name] isEqualToString: NSDragPboard])
 	{
+#ifndef GNUSTEP	
 		return @[ OOOUtlineRowsPasteboardType, (NSString*)kUTTypeUTF8PlainText, OOOUtlineXMLPasteboardType ];
+#else
+		return @[ OOOUtlineRowsPasteboardType, OOOUtlineXMLPasteboardType ];
+#endif
 	}
+#ifndef GNUSTEP	
 	return @[ (NSString*)kUTTypeUTF8PlainText, OOOUtlineXMLPasteboardType ];
+#else
+	return @[ OOOUtlineXMLPasteboardType ];
+#endif	
 }
 - (void)writeToString: (NSMutableString*)aString withIndent: (NSUInteger)anIndent
 {
@@ -100,6 +108,7 @@ thread_local OOOutlineDocument __unsafe_unretained *currentDocument;
 	{
 		return self.identifier;
 	}
+#ifndef GNUSTEP	
 	if ([type isEqualToString: (NSString*)kUTTypeUTF8PlainText])
 	{
 		NSUInteger indent = -1ULL;
@@ -113,6 +122,7 @@ thread_local OOOutlineDocument __unsafe_unretained *currentDocument;
 		[self writeToString: str withIndent: indent];
 		return str;
 	}
+#endif	
 	if ([type isEqualToString: OOOUtlineXMLPasteboardType])
 	{
 		return [[self oo3xmlValue] XMLString];

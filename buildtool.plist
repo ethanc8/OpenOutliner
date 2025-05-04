@@ -1,0 +1,4 @@
+{
+	additionalCFlags = "-DOO_HAS_PASTEBOARD=0 -fobjc-arc";
+	additional = ( "-lz" );
+}
