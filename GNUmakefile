@@ -25,8 +25,8 @@ OpenOutliner_RESOURCE_FILES = Icon/DocIcon.icns \
 	Assets.xcassets \
 	Base.lproj/OutlineDocumentWindow.xib \
 	Base.lproj/Main.storyboard \
-	ColumnInspector.xib \
-	OpenOutlinerInfo.plist
+	ColumnInspector.xib
+# OpenOutlinerInfo.plist
 
 OpenOutliner_MAIN_STORYBOARD_FILE = Main.storyboard
 

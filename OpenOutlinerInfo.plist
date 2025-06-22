@@ -1,0 +1,27 @@
+{
+    ApplicationDescription = "OpenOutliner";
+    ApplicationIcon = "";
+    ApplicationName = OpenOutliner;
+    ApplicationRelease = 0.1;
+    Authors = "David Chisnall";
+    Copyright = "Copyright (c) 2017 David Chisnall.";
+    CopyrightDescription = "All rights reserved.";
+    FullVersionID = 0.1;
+    URL = "";
+    NSTypes = (
+        {
+            NSName = "OmniOutliner2";
+            NSHumanReadableName = "OmniOutliner 2 Document";
+            NSUnixExtensions = ("ooutline");
+            NSRole = Viewer;
+            NSDocumentClass = OOOutlineDocument;
+        },
+        {
+            NSName = "OmniOutliner3";
+            NSHumanReadableName = "OmniOutliner 3 Document";
+            NSUnixExtensions = ("oo3");
+            NSRole = Editor;
+            NSDocumentClass = OOOutlineDocument;
+        }
+    );
+}
